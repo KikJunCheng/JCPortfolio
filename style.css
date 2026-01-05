@@ -580,9 +580,9 @@ body.darkmode .cv-btn:active {
 }
 
 .center-content {
-    width: 900px;
+    width: 100%;
     height: 400px;
-
+    cursor: pointer;
     margin: 64px 48px;
     padding: 2rem;
     border-radius: 20px;
@@ -614,7 +614,7 @@ body.darkmode .cv-btn:active {
         inset 0 -4px 6px rgba(0, 0, 0, 0.25);
 
     position: relative;
-    overflow: hidden;
+
 }
 
 .center-content::before {
@@ -725,7 +725,7 @@ cite {
 
 .interests {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 20px;
 
 }
@@ -826,7 +826,7 @@ body.darkmode #labelForAcademics {
         inset 0 -6px 10px rgba(0, 0, 0, 0.18);
 
     transition: transform 0.35s ease, box-shadow 0.35s ease;
-    overflow: hidden;
+   
 }
 
 .gauge-card::before {
@@ -992,6 +992,7 @@ body.darkmode .gauge-text small {
     display: flex;
     justify-content: center;
     gap: 50px;
+    
 }
 
 .attendance-progress {
