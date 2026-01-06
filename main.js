@@ -28,6 +28,40 @@ function load() {
 
 load();
 
+const typedText = document.getElementById("typedText");
+const cursor = document.querySelector(".cursor");
+
+const text = `
+I’m Jun Cheng, <span class="about-span">accelerating business</span><br>
+by building top-notch software solutions.
+`;
+
+let index3 = 0;
+let isTag = false;
+let output = "";
+
+function type() {
+    if (index3 < text.length) {
+        const char = text[index3];
+        output += char;
+
+        if (char === "<") isTag = true;
+        if (char === ">") isTag = false;
+
+        typedText.innerHTML = output;
+        index3++;
+
+        setTimeout(type, isTag ? 0 : 40);
+    } else {
+        cursor.style.display = "none"; // remove cursor when done
+    }
+}
+
+window.onload = type;
+
+
+
+
 btn.addEventListener('click', () => {
 
     body.classList.toggle('darkmode');
@@ -223,15 +257,15 @@ animateAttendance();
 
 
 
+
+
+
 animateGauge();
 
-/* DARK MODE */
-function toggleDark() {
-    document.body.classList.toggle('darkmode');
-}
 // Select all project cards
 // Select all cards
 
+// Get elements
 
 
 

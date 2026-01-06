@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Project 3</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
@@ -22,7 +22,7 @@
     <!--Navigation-->
     <nav class="navbar">
         <div class="nav-left">
-            <a href="#about">About</a>
+            <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </div>
         <div class="nav-center">
@@ -81,8 +81,8 @@
 
             </div>
             <div class="rightSide">
-                <div class="projectContent">
-                    <div class="video">
+                <div class="projectContent" id="rightContent">
+                    <button id="closeBtn" class="closeBtn">✕ Close</button>
                         <video controls autoplay muted loop playsinline>
                             <source src="video/NYP EGL145 Music Project 2026-01-02 11-17-31.mp4" type="video/mp4">
                             Your browser does not support the video tag.
@@ -105,7 +105,7 @@
                         </div>
                     </div>
                     <div class="ProjectButtons">
-                        <a href="contact.html"><button class="projectBtns">Let's Connect</button></a>
+                        <button class="projectBtns maximiseBtn">Maximise Project</button>
                         <a href="portfolio.html"><button class="projectBtns">View All Projects</button></a>
                     </div>
                 </div>
@@ -171,7 +171,43 @@
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Select all Maximise buttons
+        const maximiseBtns = document.querySelectorAll('.projectBtns.maximiseBtn');
 
+        maximiseBtns.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                // Find the closest rightSide and leftSide within the same section
+                const rightSide = btn.closest('.rightSide');
+                const section = rightSide.closest('section');
+                const leftSide = section.querySelector('.leftSide');
+
+                // Add classes to maximise right side and hide left side
+                rightSide.classList.add('maximised');
+                leftSide.classList.add('hidden');
+            });
+        });
+
+        // Select all Close buttons
+        const closeBtns = document.querySelectorAll('.closeBtn');
+
+        closeBtns.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const rightSide = btn.closest('.rightSide');
+                const section = rightSide.closest('section');
+                const leftSide = section.querySelector('.leftSide');
+
+                // Remove classes to restore layout
+                rightSide.classList.remove('maximised');
+                leftSide.classList.remove('hidden');
+            });
+        });
+    });
+
+</script>
 <script src="main.js"></script>
 
 </html>

@@ -826,7 +826,7 @@ body.darkmode #labelForAcademics {
         inset 0 -6px 10px rgba(0, 0, 0, 0.18);
 
     transition: transform 0.35s ease, box-shadow 0.35s ease;
-   
+
 }
 
 .gauge-card::before {
@@ -992,7 +992,7 @@ body.darkmode .gauge-text small {
     display: flex;
     justify-content: center;
     gap: 50px;
-    
+
 }
 
 .attendance-progress {
@@ -2663,6 +2663,7 @@ body.darkmode .skillForProject1 {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+
 }
 
 .topSection {
@@ -3372,4 +3373,740 @@ body.darkmode .glass-form:hover {
 
 .video video:hover {
     transform: translateY(-6px) scale(1.015);
+}
+
+/* Initial styles */
+.rightSide {
+    transition: all 0.5s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.leftSide {
+    transition: opacity 0.5s ease;
+}
+
+/* Container centers the video */
+
+.rightSide.maximised .video {
+    width: 870px;
+    margin: 0 auto;
+}
+
+/* Maximise state */
+body.darkmode .rightSide.maximised {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    /* adjust as needed */
+    max-height: 90%;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 20px;
+    border-radius: 15px;
+    z-index: 2000;
+    overflow-y: auto;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+}
+
+.rightSide.maximised {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    /* adjust as needed */
+    max-height: 90%;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    border-radius: 15px;
+    z-index: 2000;
+    overflow-y: auto;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+}
+
+.leftSide.hidden {
+    display: none;
+    /* hides left side */
+    transition: opacity 0.5s ease;
+}
+
+/* Close button */
+.closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff4d4f;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    display: none;
+    /* hidden by default */
+    z-index: 1000;
+}
+
+.rightSide.maximised #closeBtn {
+    display: block;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+/* Container for video */
+.aboutMeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 64px;
+    /* full screen */
+    color: #f0f0f0;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+}
+
+body.darkmode .about-span {
+    color: gainsboro;
+}
+
+
+.cursor {
+    display: inline-block;
+    margin-left: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+
+.about-span {
+    color: gray;
+    font-weight: 500;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.heroTitle {
+    font-size: 36pt;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 24px;
+    color: #333;
+}
+
+.aboutMeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1000px;
+}
+
+.aboutMeCTA {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 28pt;
+    gap: 10px;
+    color: #333;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 2.5s;
+    /* appears after typing */
+}
+body.darkmode .aboutMeCTA {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 28pt;
+    gap: 10px;
+    color: white;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 2.5s;
+    /* appears after typing */
+}
+
+.arrow {
+    text-decoration: none;
+    /* removes underline */
+    color: inherit;
+    /* uses parent color */
+    display: inline-flex;
+    /* flex works with <a> */
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+
+    background: linear-gradient(145deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(0, 0, 0, 0.6));
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.15),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.6),
+        0 8px 20px rgba(0, 0, 0, 0.5);
+
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: bounce 1.2s infinite ease-in-out;
+}
+
+#secondArrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 48px;
+    margin-top: -178px;
+}
+
+/* Chevron arrow */
+.arrow span {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-right: 3px solid rgba(255, 255, 255, 0.9);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.9);
+    transform: rotate(45deg);
+    box-sizing: border-box;
+}
+
+
+/* Hover = subtle premium response */
+.arrow:hover {
+    transform: scale(1.08);
+    box-shadow:
+        inset 0 1px 3px rgba(255, 255, 255, 0.2),
+        inset 0 -2px 6px rgba(0, 0, 0, 0.7),
+        0 12px 28px rgba(0, 0, 0, 0.6);
+}
+
+/* Typing animation (JS handles typing) */
+
+/* Fade in CTA */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Bounce arrow */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+.circularProfilePic {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 24px;
+    border-radius: 50%;
+    padding: 4px;
+
+    /* Subtle premium ring */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circularProfilePic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.arrowSpan {
+    text-decoration: none;
+}
+
+.widgets {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    gap: 50px;
+
+    min-height: 1000px;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+.rightWidget {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.leftWidget {
+    font-family: 'Montserrat', sans-serif;
+    width: 900px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#photosWidget {
+    width: 350px;
+    height: 300px;
+}
+
+#motto {
+    width: 350px;
+    height: 200px;
+}
+
+#leftWidgetCard {
+    width: 800px;
+    height: 600px;
+}
+
+body.darkmode .widgetCard {
+
+    cursor: pointer;
+
+    background: rgba(50, 50, 50, 0.35);
+    /* mostly transparent dark gray */
+    border-radius: 20px;
+    padding: 30px 40px;
+
+    color: #e0e0e0;
+
+    /* Glass effect */
+    backdrop-filter: blur(18px);
+    /* strong blur to make background frosted */
+    -webkit-backdrop-filter: blur(18px);
+
+    /* Soft shadows for depth */
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.5),
+        inset 0 1px 2px rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* subtle edge highlight */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+cite{
+    color: rgba(111,111,111,0.8);
+}
+.widgetCard {
+    cursor: pointer;
+
+    background: rgba(255, 255, 255, 0.05); /* semi-transparent white for glass effect */
+    border-radius: 20px;
+    padding: 30px 40px;
+
+    color: #222; /* dark text for readability */
+
+    /* Glass effect */
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    /* Soft shadows for depth */
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.15), /* lighter shadow for light background */
+        inset 0 1px 2px rgba(255, 255, 255, 0.2); /* subtle inner highlight */
+
+    border: 1px solid rgba(255, 255, 255, 0.5); /* subtle light border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.darkmode .widgetCard:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.6),
+        inset 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+.widgetCard:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.2),
+        inset 0 2px 4px rgba(255, 255, 255, 0.25);
+}
+body.darkmode .widgetTopSection h1 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.widgetTopSection h1 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+body.darkmode .widgetTopSection h3 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #b0b0b0;
+    margin-bottom: 6px;
+}
+
+.widgetTopSection h3 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: rgba(90, 90, 90, 0.75);
+    /* soft gray */
+    margin-bottom: 6px;
+}
+
+.widgetTopSection h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: rgba(60, 60, 60, 0.85);
+    /* slightly stronger */
+}
+
+body.darkmode .widgetTopSection h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #999999;
+}
+
+.values {
+    display: flex;
+    /* normal block layout */
+    padding: 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    /* optional, only works with flex/grid */
+
+    /* now works */
+    min-height: 1000px;
+}
+
+.value-container {
+    display: grid;
+    grid-template-columns: repeat(3, 500px); /* 3 columns, each 500px */
+    grid-template-rows: repeat(2, auto);     /* 2 rows, auto height */
+    justify-content: center;                 /* center the whole grid */
+    gap: 20px;                               /* spacing between cards */
+    flex-wrap: wrap;
+}
+
+
+body.darkmode .value-card {
+
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 16px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.15),
+        0 6px 18px rgba(0, 0, 0, 0.25);
+
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+.value-card {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.25); /* semi-transparent white */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    box-shadow:
+        inset 0 1px 2px rgba(0, 0, 0, 0.1), /* subtle inner shadow */
+        0 6px 18px rgba(0, 0, 0, 0.12); /* soft outer shadow */
+
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+
+body.darkmode .value-card:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.3);
+}
+.value-card:hover {
+    transform: translateY(-6px);
+    background:rgba(255, 255, 255, -0.5) ;
+}
+body.darkmode .value-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.85);
+}
+.value-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+    color: #333;
+    background: rgba(255, 255, 255, -0.7); /* semi-transparent light background */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    border-radius: 10px; /* pill / rounded rectangle shape */
+    padding: 5px 10px;
+    display: inline-block;
+
+    /* 3D effect */
+    box-shadow:
+        2px 2px 6px rgba(0, 0, 0, 0.25), /* bottom-right shadow */
+        -2px -2px 6px rgba(255, 255, 255, 0.3); /* top-left highlight */
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+body.darkmode .value-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+    color: #f0f0f0; /* light icon for dark background */
+    
+    background: rgba(30, 30, 30, 0.6); /* dark semi-transparent background */
+
+
+    border-radius: 10px; /* pill / rounded rectangle shape */
+    padding: 5px 10px;
+    display: inline-block;
+
+    /* 3D effect */
+
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.darkmode .value-card h3 {
+    font-size: 21px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+ .value-card h3 {
+    font-size: 21px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+
+body.darkmode .value-card p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+}
+.value-card p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+}
+
+
+
+
+.middleSection {
+    margin-top: 48px;
+}
+
+body.darkmode .middleSection p {
+    font-size: 18px;
+    line-height: 1.75;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.92);
+    letter-spacing: 0.3px;
+    text-align: justify;
+    margin-bottom: 18px;
+}
+
+.middleSection p {
+    font-size: 18px;
+    line-height: 1.75;
+    font-weight: 300;
+    color: rgba(30, 30, 30, 0.88);
+    letter-spacing: 0.3px;
+    text-align: justify;
+    margin-bottom: 18px;
+}
+
+body.darkmode .middleSectionH1 {
+    font-size: 21pt;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    margin-bottom: 10px;
+    margin-top: 22px
+}
+
+.middleSectionH1 {
+    font-size: 21pt;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+
+    color: #333;
+
+    margin-bottom: 10px;
+    margin-top: 22px
+}
+
+.bottomSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-top: 48px;
+    margin-bottom: 24px;
+}
+
+body.darkmode .bottomSection h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #999999;
+
+    margin-bottom: 8px;
+}
+
+.bottomSection h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: rgba(60, 60, 60, 0.85);
+    /* slightly stronger */
+
+    margin-bottom: 8px;
+}
+
+.softwareIcons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.softwareIcons div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.15),
+        0 6px 18px rgba(0, 0, 0, 0.25);
+
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.toolIcon {
+    width: 24px;
+    height: 24px;
+    opacity: 0.9;
+}
+
+.softwareIcons div:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.softwareIcons div:hover .toolIcon {
+    opacity: 1;
+}
+
+#photosWidget img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    border-radius: 18px;
+    transform: scale(1.02);
+    transition: transform 0.6s ease, filter 0.6s ease;
+
+    filter: brightness(0.95) contrast(1.05);
+}
+
+#photosWidget:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.18),
+        0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+#photosWidget:hover img {
+    transform: scale(1.08);
+    filter: brightness(1) contrast(1.1);
+}
+
+body.darkmode #motto h1 {
+    margin-bottom: 24px;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.55);
+    /* soft gray */
+
+
+}
+
+#motto h1 {
+    margin-bottom: 24px;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+
+    color: #333;
+    /* soft gray */
+
+
+}
+
+body.darkmode #bibleVerse {
+    font-size: 18pt;
+    color: white;
+}
+
+#bibleVerse {
+    color: #333;
+    font-size: 18pt;
 }
