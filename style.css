@@ -1956,6 +1956,7 @@ section h1:hover::before {
     width: 400px;
     height: 550px;
     transition: 1s ease-in-out;
+    cursor: pointer;
 }
 
 .image-wrapper .swiper-pagination-bullet {
@@ -2023,6 +2024,22 @@ section h1:hover::before {
 .image8 img:hover {
     transform: scale(1.03);
 
+}
+.image9 img:hover {
+    transform: scale(1.03);
+
+}
+.image10 img:hover {
+    transform: scale(1.03);
+
+}
+.image11 img:hover {
+    transform: scale(1.03);
+
+}
+.image12 img:hover {
+    transform: scale(1.03);
+    
 }
 
 article {
